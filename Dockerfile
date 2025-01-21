@@ -1,10 +1,10 @@
-# Use the official Node.js image as the base image
-FROM node:16
+# Stage 1: Build the application
+FROM node:16 AS builder
 
 # Set the working directory
 WORKDIR /app
 
-# Copy package.json and lock file
+# Copy package.json and lock files
 COPY package.json yarn.lock ./
 
 # Install dependencies
@@ -16,8 +16,18 @@ COPY . .
 # Build the Next.js application
 RUN yarn build
 
-# Expose port 3000
-EXPOSE 3000
+# Stage 2: Serve the application using nginx
+FROM nginx:alpine
 
-# Start the Next.js application
-CMD ["yarn", "start"]
+# Set the working directory in nginx
+WORKDIR /usr/share/nginx/html
+
+# Copy the built application files
+COPY --from=builder /app/.next /usr/share/nginx/html/
+COPY --from=builder /app/public /usr/share/nginx/html/public
+
+# Expose the default nginx port
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
