@@ -4,10 +4,10 @@ function Section4() {
   return (
     <div className=" py-12">
       <div className="text-center mb-8">
-        <h2 className="lg:text-3xl font-bold max-sm:leading-7 text-gray-900">Comprehensive Mobile Solutions</h2>
-        <p className="text-gray-600 text-sm lg:w-[40%] mx-auto text-center mt-2">
+        <h2 className="lg:text-3xl font-bold max-sm:leading-7 text-gray-900">Our Services</h2>
+        {/* <p className="text-gray-600 text-sm lg:w-[40%] mx-auto text-center mt-2">
           Your success is our priority. We offer end-to-end mobile app development services tailored to your unique vision and goals.
-        </p>
+        </p> */}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-4">
         {/* Card 1 */}

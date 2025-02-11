@@ -88,12 +88,13 @@ function Section2() {
                         <h3 className="text-lg font-semibold mt-2">Revolutionary Healthcare </h3>
                         <p className="text-sm text-gray-500 mt-1">
                             Transformed patient care with an innovative telehealth solution that increased  by 300%.
+                            Transformed patient care with an innovative telehealth solution that increased  by 300%.
                         </p>
-                        <div className="border w-[95%] mt-10"></div>
-                        <div className="flex justify-between items-center text-gray-400 text-sm mt-4">
+                        {/* <div className="border w-[95%] mt-10"></div> */}
+                        {/* <div className="flex justify-between items-center text-gray-400 text-sm mt-4">
                             <span>👥 12 Team Members</span>
                             <span>⏱ 8 months</span>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -136,13 +137,14 @@ function Section2() {
                         <span className="text-green-500 bg-green-100 px-4 py-1 rounded-xl text-sm">FinTech</span>
                         <h3 className="text-lg font-semibold mt-2">Next-Gen Banking Solution</h3>
                         <p className="text-sm text-gray-500 mt-1">
-                            Developed a secure mobile banking platform with 2M+ active users and 99.9% uptime.
+                            Transformed patient care with an innovative telehealth solution that increased  by 300%.
+                            Transformed patient care with an innovative telehealth solution that increased  by 300%.
                         </p>
-                        <div className="border  w-[95%] mt-10"></div>
-                        <div className="flex justify-between items-center text-gray-400 text-sm mt-4">
+                        {/* <div className="border  w-[95%] mt-10"></div> */}
+                        {/* <div className="flex justify-between items-center text-gray-400 text-sm mt-4">
                             <span>👥 15 Team Members</span>
                             <span>⏱ 12 months</span>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -185,13 +187,14 @@ function Section2() {
                         <span className="bg-purple-200 rounded-xl px-4 py-1 text-sm text-purple-600">E-commerce</span>
                         <h3 className="text-lg font-semibold mt-2">AI-Powered Shopping Experience</h3>
                         <p className="text-sm text-gray-500 mt-1">
-                            Created a personalized shopping app that increased customer engagement by 200%.
+                            Transformed patient care with an innovative telehealth solution that increased  by 300%.
+                            Transformed patient care with an innovative telehealth solution that increased  by 300%.
                         </p>
-                        <div className="border w-[95%] mt-10"></div>
-                        <div className="flex justify-between items-center text-gray-400 text-sm mt-4">
+                        {/* <div className="border w-[95%] mt-10"></div> */}
+                        {/* <div className="flex justify-between items-center text-gray-400 text-sm mt-4">
                             <span>👥 10 Team Members</span>
                             <span>⏱ 6 months</span>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
