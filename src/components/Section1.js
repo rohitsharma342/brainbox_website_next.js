@@ -147,7 +147,7 @@ export function Section1() {
           <h1
             className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-black relative z-20">
             <div >
-              <div className="bg-gradient-to-r from-blue-50 to-purple-100">
+              <div className="bg-gradient-to-r from-blue-50 to-purple-100 rounded-3xl ">
               <p className="lg:text-[65px] max-sm:mt- lg:-mt-36 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
                 {/* Transform Your{" "} */}
                 <AnimatePresence mode="wait">
@@ -156,7 +156,7 @@ export function Section1() {
                     initial={{ rotateX: 90, opacity: 0 }}
                     animate={{ rotateX: 0, opacity: 1 }}
                     transition={{ duration: 0.1 }} // Super fast transition
-                    className="lg:text-[65px] max-sm:mt- lg:-mt-36 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500  border border-purple-400 px-4 rounded-md "
+                    className="lg:text-[65px] max-sm:mt- lg:-mt-36 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500  border border-purple-200 px-4 rounded-3xl "
                   >
                     Transform Your {words[index]} into
                   </motion.p>
