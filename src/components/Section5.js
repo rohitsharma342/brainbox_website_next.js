@@ -240,7 +240,7 @@ function Section5() {
 
             {/* Call-to-Action Button */}
             <div className="text-center mt-8">
-                <button className="bg-blue-600 text-white lg:px-6 max-sm:px-4 py-3 max-sm:py-2 rounded-lg font-semibold text-sm max-sm:text-[16px] md:text-base hover:bg-blue-700">
+                <button className="bg-blue-600 text-white lg:px-6 max-sm:px-4 py-3 max-sm:py-2 rounded-lg  max-sm:text-[16px] md:text-base hover:bg-blue-700">
                     Share Your Vision With Us →
                 </button>
             </div>
