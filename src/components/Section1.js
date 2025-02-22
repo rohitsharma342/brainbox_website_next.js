@@ -104,7 +104,7 @@ export function Section1() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 2500); // Changes every 2 seconds
+    }, 4000); // Changes every 2 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -147,30 +147,30 @@ export function Section1() {
           <h1
             className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-black relative z-20">
             <div>
-            <p className="lg:text-[65px] max-sm:mt- lg:-mt-36 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
-  Transform Your{" "}
-  <span className="relative inline-block bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
-    <AnimatePresence mode="wait">
-      <motion.span
-        key={words[index]} // Triggers re-render for smooth transition
-        initial={{ opacity: 0, rotateX: 90 }}
-        animate={{ opacity: 1, rotateX: 0 }}
-        exit={{ opacity: 0, rotateX: -90 }} // Flips smoothly
-        transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition
-        className="inline-block bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
-      >
-        {words[index]}
-      </motion.span>
-    </AnimatePresence>
-  </span>{" "}
-  Into
-</p>
+              <p className="lg:text-[65px] lg:-mt-36 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+                Transform Your{" "}
+                <span className="relative inline-block bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={words[index]} // Triggers re-render for smooth transition
+                      initial={{ opacity: 0, rotateX: 90 }}
+                      animate={{ opacity: 1, rotateX: 0 }}
+                      exit={{ opacity: 0, rotateX: -90 }} // Flips smoothly
+                      transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition
+                      className="inline-block bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 leading-[1.2] min-h-[1em] flex items-center"
+                    >
+                      {words[index]}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>{" "}
+                Into
+              </p>
 
               <p className="lg:text-[60px] font-bold text-blue-600 lg:mt-0 max-sm:leading-8 text-center">
                 Exceptional Mobile Experience
               </p>
-
             </div>
+
           </h1>
 
           {/* Gradients */}
@@ -181,14 +181,14 @@ export function Section1() {
             {/* Main Content */}
             <div className="relative z-10 ">
               <p className="lg:text-gray-500 text-lg max-sm:text-sm mt-5 lg:w-[50%] mx-auto text-center leading-6">
-              We are a mobile app development agency building world-class digital products for startups and global brands. Not just another agency, we are your dedicated tech partners🚀
+                We are a mobile app development agency building world-class digital products for startups and global brands. Not just another agency, we are your dedicated tech partners🚀
               </p>
               <div className="flex justify-center space-x-6 mt-10">
                 <button className="bg-blue-500 text-white  font-medium lg:px-6 max-sm:px-2 py-3 rounded-lg hover:bg-blue-600">
                   Schedule a Free Consultation
                 </button>
                 <button className="bg-white text-gray-700 border  font-medium lg:px-8 py-3 max-sm:px-2 rounded-lg hover:bg-gray-100">
-                Get a Free Quote
+                  Get a Free Quote
                 </button>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:w-[90%] max-sm:w-[95%] mx-auto text-center mt-10">
