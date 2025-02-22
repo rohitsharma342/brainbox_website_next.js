@@ -6,21 +6,19 @@ export default function BlogDetail() {
     const params = useParams();
     console.log("Params from URL:", params);
 
-    if (!params || !params.id) {
-        return <p className="text-red-500 text-center mt-32">🚨 Invalid blog ID!</p>;
-    }
+   
 
-    const { id } = params || {};
+    const { id: slug } = params || {};
     const [blog, setBlog] = useState(null);
     const [loading, setLoading] = useState(true);
     const siteURL = "balwadaanil0783.wordpress.com";
 
     useEffect(() => {
-        if (!id) return;
+        if (!slug) return;
 
         const fetchBlog = async () => {
             try {
-                const response = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/${siteURL}/posts/${id}`);
+                const response = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/${siteURL}/posts/slug:${slug}`);
                 const data = await response.json();
                 console.log("Fetched Blog:", data);
                 setBlog(data);
@@ -32,7 +30,7 @@ export default function BlogDetail() {
         };
 
         fetchBlog();
-    }, [id]);
+    }, [slug]);
 
     return (
         <div className="flex  justify-center mt-32 px-5">
