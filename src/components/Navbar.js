@@ -10,9 +10,9 @@ function Navbar({ className }) {
     <nav className="bg-white border w-full">
       <div className="container mx-auto flex justify-between items-center py-0 px-40">
         {/* Logo Section */}
-        <div className="text-[25px] flex font-bold text-gray-900">
+        <Link href={"/"}  className="text-[25px] flex font-bold text-gray-900">
           BrainBox Apps
-        </div>
+        </Link>
 
         {/* Menu Links */}
         <Menu setActive={setActive}>

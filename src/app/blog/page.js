@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function BlogPage() {
     const [blogs, setBlogs] = useState([]);
-    const siteURL = "balwadaanil0783.wordpress.com"; // Your WordPress site
+    const siteURL = "balwadaanil0783.wordpress.com";
 
     useEffect(() => {
         const fetchBlogs = async () => {
@@ -24,23 +24,23 @@ export default function BlogPage() {
         fetchBlogs();
     }, []);
 
-    // Function to create a URL-friendly slug from a title
+    
     const generateSlug = (title) => {
         return title
             .toLowerCase()
-            .replace(/[^a-z0-9\s]/g, "") // Remove special characters
-            .replace(/\s+/g, "-"); // Replace spaces with dashes
+            .replace(/[^a-z0-9\s]/g, "") 
+            .replace(/\s+/g, "-"); 
     };
 
     // Extract first image from blog content
     const extractFirstImage = (content) => {
         const match = content.match(/<img[^>]+src="([^">]+)"/);
-        return match ? match[1] : "https://via.placeholder.com/300"; // ✅ Better placeholder image
+        return match ? match[1] : "https://via.placeholder.com/300";
     };
 
-    // Function to trim text to a certain length
+ 
     const truncateText = (text, limit) => {
-        const strippedText = text.replace(/<[^>]*>/g, ""); // Remove HTML tags
+        const strippedText = text.replace(/<[^>]*>/g, ""); 
         return strippedText.length > limit ? strippedText.substring(0, limit) + "..." : strippedText;
     };
 
