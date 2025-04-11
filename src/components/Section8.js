@@ -109,8 +109,8 @@ export default function Section8() {
       </div>
 
       {/* Call to Action */}
-      <div className="mt-10 text-sm max-sm:text-[14px] text-center">
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold max-sm:py-2 py-3 px-6 max-sm:px-4 rounded-lg">
+      <div className="mt-10  max-sm:text-[14px] text-center">
+        <button className="bg-blue-600 hover:bg-blue-700 text-white  max-sm:py-2 py-3 px-6 max-sm:px-4 rounded-lg">
           Discuss Your Tech Requirements →
         </button>
       </div>

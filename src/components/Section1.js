@@ -91,10 +91,24 @@
 
 "use client";
 import React from "react";
+import { useState, useEffect } from "react";
 import { SparklesCore } from "./ui/sparkles";
 import GoogleIcon from '@mui/icons-material/Google';
+import { motion, AnimatePresence } from "framer-motion";
+
+const words = ["Vision", "Ideas", "Thoughts"];
 
 export function Section1() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 4000); // Changes every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <div className="relative w-full h-[85vh]">
@@ -111,21 +125,21 @@ export function Section1() {
         <div className="max-sm:hidden flex overflow-x-scroll hide-scrollbar justify-center space-x-4 mb-8 mt-24">
           {/* Badge 1 */}
           <div className="flex items-center space-x-2 z-20 lg:px-4 lg:py-1 bg-white rounded-full shadow-sm border">
-            <GoogleIcon />
-            <p className="text-sm font-medium">Top 20 Indian Startups of 2024</p>
+            {/* <GoogleIcon /> */}
+            <p className=" font-medium">Top App Development Company</p>
           </div>
 
           {/* Badge 2 */}
           <div className="flex items-center space-x-2 z-20 lg:px-4 lg:py-1 bg-white rounded-full shadow-sm border">
-            <GoogleIcon />
-            <p className="text-sm font-medium">Top 20 Indian Startups of 2023</p>
+            {/* <GoogleIcon /> */}
+            <p className=" font-medium">Top User Experience Company</p>
           </div>
 
           {/* Badge 3 */}
           <div className=" flex items-center lg:space-x-2 z-20  lg:px-4 lg:py-1 bg-white rounded-full shadow-sm border">
-            <GoogleIcon />
+            {/* <GoogleIcon /> */}
 
-            <p className="text-sm font-medium">AI Bootcamp Top 20 - 2024</p>
+            <p className=" font-medium">Top App Development Company</p>
           </div>
         </div>
         <div
@@ -133,14 +147,30 @@ export function Section1() {
           <h1
             className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-black relative z-20">
             <div>
-              <p className="lg:text-[65px] max-sm:mt- lg:-mt-36 font-bold text-center">
-                Transform Your Vision into
+              <p className="lg:text-[65px] lg:-mt-36 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+                Transform Your{" "}
+                <span className="relative inline-block bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={words[index]} // Triggers re-render for smooth transition
+                      initial={{ opacity: 0, rotateX: 90 }}
+                      animate={{ opacity: 1, rotateX: 0 }}
+                      exit={{ opacity: 0, rotateX: -90 }} // Flips smoothly
+                      transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition
+                      className="inline-block bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 leading-[1.2] min-h-[1em] flex items-center"
+                    >
+                      {words[index]}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>{" "}
+                Into
               </p>
+
               <p className="lg:text-[60px] font-bold text-blue-600 lg:mt-0 max-sm:leading-8 text-center">
                 Exceptional Mobile Experience
               </p>
-
             </div>
+
           </h1>
 
           {/* Gradients */}
@@ -151,34 +181,32 @@ export function Section1() {
             {/* Main Content */}
             <div className="relative z-10 ">
               <p className="lg:text-gray-500 text-lg max-sm:text-sm mt-5 lg:w-[50%] mx-auto text-center leading-6">
-                Your trusted partner in crafting innovative mobile solutions that drive
-                growth and deliver exceptional user experiences. Let's bring your app idea
-                to life.
+                We are a mobile app development agency building world-class digital products for startups and global brands. Not just another agency, we are your dedicated tech partners🚀
               </p>
               <div className="flex justify-center space-x-6 mt-10">
-                <button className="bg-blue-500 text-white text-sm font-medium lg:px-6 max-sm:px-2 py-3 rounded-lg hover:bg-blue-600">
+                <button className="bg-blue-500 text-white  font-medium lg:px-6 max-sm:px-2 py-3 rounded-lg hover:bg-blue-600">
                   Schedule a Free Consultation
                 </button>
-                <button className="bg-white text-gray-700 border text-sm font-medium lg:px-6 py-3 max-sm:px-2 rounded-lg hover:bg-gray-100">
-                  Explore Our Services
+                <button className="bg-white text-gray-700 border  font-medium lg:px-8 py-3 max-sm:px-2 rounded-lg hover:bg-gray-100">
+                  Get a Free Quote
                 </button>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:w-[90%] max-sm:w-[95%] mx-auto text-center mt-10">
                 <div className="text-center border rounded-lg lg:p-6 bg-white hover:shadow-md">
-                  <p className="text-2xl max-sm:mt-1 max-sm:text-[18px] font-bold text-blue-600">100+</p>
-                  <p className="lg:text-gray-500 lg:mt-2 text-sm max-sm:text-[14px]">Apps Delivered</p>
+                  <p className="text-2xl max-sm:mt-1 max-sm:text-[18px] font-bold text-blue-600">8+</p>
+                  <p className="lg:text-gray-500 lg:mt-2  max-sm:text-[14px]">Years Experience</p>
                 </div>
                 <div className="text-center border rounded-lg lg:p-6 bg-white hover:shadow-md">
-                  <p className="text-2xl max-sm:mt-1 max-sm:text-[18px] font-bold text-blue-600">98%</p>
-                  <p className="lg:text-gray-500 lg:mt-2 text-sm max-sm:text-[14px]">Client Satisfaction</p>
+                  <p className="text-2xl max-sm:mt-1 max-sm:text-[18px] font-bold text-blue-600">95%</p>
+                  <p className="lg:text-gray-500 lg:mt-2  max-sm:text-[14px]">Returning Clients</p>
+                </div>
+                <div className="text-center border rounded-lg lg:p-6 bg-white hover:shadow-md">
+                  <p className="text-2xl max-sm:mt-1 max-sm:text-[18px] font-bold text-blue-600">100+</p>
+                  <p className="lg:text-gray-500 lg:mt-2  max-sm:text-[14px]">Apps Delivered</p>
                 </div>
                 <div className="text-center border rounded-lg lg:p-6 bg-white hover:shadow-md">
                   <p className="text-2xl max-sm:mt-1 max-sm:text-[18px] font-bold text-blue-600">50+</p>
-                  <p className="lg:text-gray-500 lg:mt-2 text-sm max-sm:text-[14px]">Expert Developers</p>
-                </div>
-                <div className="text-center border rounded-lg lg:p-6 bg-white hover:shadow-md">
-                  <p className="text-2xl max-sm:mt-1 max-sm:text-[18px] font-bold text-blue-600">8+</p>
-                  <p className="lg:text-gray-500 lg:mt-2 text-sm max-sm:text-[14px]">Years Experience</p>
+                  <p className="lg:text-gray-500 lg:mt-2  max-sm:text-[14px]">Countries Served</p>
                 </div>
               </div>
 

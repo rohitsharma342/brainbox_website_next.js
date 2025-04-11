@@ -3,7 +3,7 @@ import { HoverEffect } from "./ui/card-hover-effect";
 
 function Section7() {
   return (
-    <div className=" ">
+    <div className="mt-10 ">
       {/* Header */}
       <div className="text-center">
         <h2 className="lg:text-3xl font-bold text-gray-800">Our Growth Journey</h2>
