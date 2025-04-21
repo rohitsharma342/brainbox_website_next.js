@@ -1,119 +1,118 @@
 import React from 'react';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import AppleIcon from '@mui/icons-material/Apple';
+import AndroidIcon from '@mui/icons-material/Android';
+import DevicesIcon from '@mui/icons-material/Devices';
+import WebIcon from '@mui/icons-material/Web';
+import CloudIcon from '@mui/icons-material/Cloud';
+import CodeIcon from '@mui/icons-material/Code';
+import StorageIcon from '@mui/icons-material/Storage';
+import WebDevelopmentIcon from '@mui/icons-material/WebAsset';
+
+const techStacks = [
+  {
+    title: 'iOS Development',
+    icon: <AppleIcon className="text-white" />,
+    bgCard: 'bg-black',
+    bulletColor: 'text-blue-400',
+    technologies: ['Swift', 'SwiftUI', 'Objective-C'],
+  },
+  {
+    title: 'Android Development',
+    icon: <AndroidIcon className="text-white" />,
+    bgCard: 'bg-black',
+    bulletColor: 'text-green-400',
+    technologies: ['Kotlin', 'Java', 'Jetpack Compose'],
+  },
+  {
+    title: 'Cross-Platform',
+    icon: <DevicesIcon className="text-white" />,
+    bgCard: 'bg-black',
+    bulletColor: 'text-purple-400',
+    technologies: ['React Native', 'Flutter', 'Xamarin'],
+  },
+  {
+    title: 'Web Development',
+    icon: <WebIcon className="text-white" />,
+    bgCard: 'bg-black',
+    bulletColor: 'text-teal-400',
+    technologies: ['React.js', 'Next.js', 'Vue.js', 'HTML', 'CSS'],
+  },
+  {
+    title: 'Cloud & DevOps',
+    icon: <CloudIcon className="text-white" />,
+    bgCard: 'bg-black',
+    bulletColor: 'text-gray-400',
+    technologies: ['AWS', 'Azure', 'Docker', 'Kubernetes'],
+  },
+  {
+    title: 'Backend Development',
+    icon: <CodeIcon className="text-white" />,
+    bgCard: 'bg-black',
+    bulletColor: 'text-red-400',
+    technologies: ['Node.js', 'Express', 'Python', 'Ruby on Rails'],
+  },
+  {
+    title: 'Database Management',
+    icon: <StorageIcon className="text-white" />,
+    bgCard: 'bg-black',
+    bulletColor: 'text-yellow-400',
+    technologies: ['MongoDB', 'MySQL', 'PostgreSQL', 'SQLite'],
+  },
+  {
+    title: 'Web Design & UI/UX',
+    icon: <WebDevelopmentIcon className="text-white" />,
+    bgCard: 'bg-black',
+    bulletColor: 'text-indigo-400',
+    technologies: ['Figma', 'Adobe XD', 'Sketch', 'Tailwind CSS'],
+  },
+];
 
 export default function Section8() {
   return (
-    
-    <div className="bg-gray-50 py-10">
-       
-      {/* Section Heading */}
-      <div className="text-center">
-        <h2 className="text-3xl max-sm:text-2xl font-bold text-gray-800">
+    <section className="bg-white py-16 px-6 text-black">
+      {/* Section Header */}
+      <div className="text-center max-w-2xl mx-auto text-black">
+        <h2 className="text-4xl font-bold tracking-tight max-sm:text-2xl">
           Cutting-Edge Technology Stack
         </h2>
-        <p className="mt-4 max-sm:mt-2 text-gray-600 text-lg max-sm:text-[14px] max-sm:leading-4">
-          We leverage the latest technologies to build robust, scalable, and
-          innovative mobile applications 
+        <p className="mt-4 text-black text-lg max-sm:text-sm">
+          We leverage the latest technologies to build robust, scalable, and innovative applications.
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-sm:gap-4 max-w-6xl mx-auto px-6">
-        {/* iOS Development Card */}
-        <div className="bg-white border  border-gray-200 rounded-xl shadow-sm p-6 text-center">
-          <div className="flex justify-center mb-4">
-            <div className="bg-blue-100 p-3 rounded-lg">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-blue-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 6v6m0 0l-6 6m6-6l6 6m-6-6V6m0 12v2a2 2 0 002 2h4a2 2 0 002-2v-2m-6 0H6a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v10"
-                />
-              </svg>
+      {/* Cards Grid */}
+      <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+        {techStacks.map((stack, idx) => (
+          <div
+            key={idx}
+            className={`rounded-lg bg-black hover:bg-linear-to-r from-red-500 to-gray-500 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-4 text-center`}
+          >
+            <div className="flex justify-center items-center mb-4 bg-white hover:bg-blue-500 bg-opacity-10 p-3 rounded-full w-16 h-16 mx-auto">
+              {stack.icon}
+            </div>
+            <h3 className="text-lg font-semibold text-white mb-5">{stack.title}</h3>
+            <div className="  text-left flex justify-center gap-5 flex-wrap text-gray-300 text-base">
+              {stack.technologies.map((tech, techIdx) => (
+                <div key={techIdx} className="flex items-start rounded-lg border-2 px-5  border-white">
+                  {/* <FiberManualRecordIcon
+                    className={`${stack.bulletColor}  mt-1`}
+                    style={{ fontSize: '12px' }}
+                  /> */}
+                  <span>{tech}</span>
+                </div>
+              ))}
             </div>
           </div>
-          <h3 className="text-xl max-sm:text-[18px] font-semibold text-gray-800">iOS Development</h3>
-          <ul className="mt-4 text-[18px] max-sm:text-[14px] text-start text-gray-600 max-sm:leading-5 ">
-            <li><FiberManualRecordIcon className='text-blue-300 mr-2 ' style={{fontSize:"14px"}}/>Swift</li>
-            <li><FiberManualRecordIcon className='text-blue-300 mr-2 ' style={{fontSize:"14px"}}/>SwiftUI</li>
-            <li><FiberManualRecordIcon className='text-blue-300 mr-2 ' style={{fontSize:"14px"}}/>Objective-C</li>
-          </ul>
-        </div>
-
-        {/* Android Development Card */}
-        <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 text-center">
-          <div className="flex justify-center mb-4">
-            <div className="bg-green-100 p-3 rounded-lg">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-green-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 6v6m0 0l-6 6m6-6l6 6m-6-6V6m0 12v2a2 2 0 002 2h4a2 2 0 002-2v-2m-6 0H6a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v10"
-                />
-              </svg>
-            </div>
-          </div>
-          <h3 className="text-xl max-sm:text-[18px] font-semibold text-gray-800">
-            Android Development
-          </h3>
-          <ul className="mt-4 text-[18px] max-sm:text-[14px] text-start text-gray-600 max-sm:leading-5 ">
-            <li><FiberManualRecordIcon className='text-green-300 mr-2 ' style={{fontSize:"14px"}}/>Kotlin</li>
-            <li><FiberManualRecordIcon className='text-green-300  mr-2' style={{fontSize:"14px"}}/>Java</li>
-            <li><FiberManualRecordIcon className='text-green-300 mr-2 ' style={{fontSize:"14px"}}/>Jetpack Compose</li>
-          </ul>
-        </div>
-
-        {/* Cross-Platform Card */}
-        <div className="bg-white border  border-gray-200 rounded-xl shadow-sm p-6 text-center">
-          <div className="flex justify-center mb-4">
-            <div className="bg-purple-100 p-3 rounded-lg">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-purple-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 6v6m0 0l-6 6m6-6l6 6m-6-6V6m0 12v2a2 2 0 002 2h4a2 2 0 002-2v-2m-6 0H6a2 2 0 01-2-2V4a2 2 0 012-2h8a2 2 0 012 2v10"
-                />
-              </svg>
-            </div>
-          </div>
-          <h3 className="text-xl max-sm:text-[18px] font-semibold text-gray-800">
-            Cross-Platform
-          </h3>
-          <ul className="mt-4 text-[18px] max-sm:text-[14px] text-start text-gray-600 max-sm:leading-5 ">
-            <li><FiberManualRecordIcon className='text-purple-300 mr-2 ' style={{fontSize:"14px"}}/>React Native</li>
-            <li><FiberManualRecordIcon className='text-purple-300 mr-2 ' style={{fontSize:"14px"}}/>Flutter</li>
-            <li><FiberManualRecordIcon className='text-purple-300 mr-2 ' style={{fontSize:"14px"}}/>Xamarin</li>
-          </ul>
-        </div>
+        ))}
       </div>
 
-      {/* Call to Action */}
-      <div className="mt-10  max-sm:text-[14px] text-center">
-        <button className="bg-blue-600 hover:bg-blue-700 text-white  max-sm:py-2 py-3 px-6 max-sm:px-4 rounded-lg">
+      {/* CTA Button */}
+      <div className="text-center mt-12">
+        <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-6 py-2 rounded-full shadow-lg transition-all duration-300 max-sm:text-sm max-sm:py-2 max-sm:px-4">
           Discuss Your Tech Requirements →
         </button>
       </div>
-    </div>
+    </section>
   );
 }

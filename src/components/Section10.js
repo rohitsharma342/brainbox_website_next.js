@@ -8,7 +8,7 @@ function Section10() {
       <div className="font-bold py-5 max-sm:hidden">Join Us</div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Form Section */}
-        <div className="bg-gray-50 p-8 rounded-lg text-start   shadow-md">
+        <div className="bg-gray-50 p-8 rounded-lg text-start   ">
           <h2 className="text-2xl max-sm:text-center font-bold mb-4 max-sm:mb-2 max-sm:leading-6">
             Let's Build Something Amazing Together
           </h2>
@@ -16,7 +16,7 @@ function Section10() {
             Transform your app idea into reality. We're here to be your
             dedicated development partner.
           </p>
-          <form className="space-y-6 p-6 bg-white/50 backdrop-blur-xl rounded-lg shadow-lg border border-white/40">
+          <form className="space-y-6 p-6 bg-white/50 backdrop-blur-xl rounded-lg  border border-white/40">
             <div className="lg:flex lg:justify-between gap-6">
               <input
                 type="text"

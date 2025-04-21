@@ -1,6 +1,7 @@
 import React from "react";
 import { FaSlidersH, FaFlask, FaPuzzlePiece, FaBolt } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
+import AccordionUsage from "./Accordian";
 
 const services = [
   {
@@ -9,9 +10,31 @@ const services = [
     description:
       "Experience the power of rapid iteration and validation. We transform your concept into an interactive prototype within weeks, allowing you to:",
     points: [
-      "Validate your app idea with real users",
-      "Gather valuable feedback early",
-      "Minimize development risks",
+      {title:"Deliverables",
+        values:[
+          "Clickable prototype with real user flows",
+          "High-fidelity UI designs + raw design files",
+          "Scope of work + detailed feature list (SRS)",
+          "Ready-to-build foundation for dev teams  ",
+          "Trello board for real-time tracking"
+        ]
+      },
+      {title:"Ideal For",
+        values:[
+          "Early-stage startups",
+          "Founders with just an idea",
+          "Pre-investor presentations",
+          "Stakeholder demos & approvals",
+        ]
+      },
+      {title:"Our AI Companion in Action",
+        values:[
+          "Early-stage startups",
+          "Founders with just an idea",
+          "Pre-investor presentations",
+          "Stakeholder demos & approvals",
+        ]
+      },
     ],
   },
   {
@@ -19,33 +42,51 @@ const services = [
     title: "Product Development",
     description:
       "Full-cycle development that brings your vision to life. Our expert team ensures:",
-    points: [
-      "Scalable architecture design",
-      "Clean, efficient code",
-      "Comprehensive testing & QA",
-    ],
+      points: [
+        {title:"Deliverables",
+          values:[
+            "Clickable prototype with real user flows",
+            "High-fidelity UI designs + raw design files",
+            "Scope of work + detailed feature list (SRS)",
+            "Ready-to-build foundation for dev teams  ",
+            "Trello board for real-time tracking"
+          ]
+        }
+      ],
   },
   {
     icon: <FaPuzzlePiece className="group-hover:text-white text-blue-500 text-2xl transition-colors duration-300" />,
     title: "Product Consulting",
     description:
       "Strategic guidance for optimal product lifecycle management. We help you:",
-    points: [
-      "Define clear product roadmaps",
-      "Optimize development processes",
-      "Scale effectively",
-    ],
+      points: [
+        {title:"Deliverables",
+          values:[
+            "Clickable prototype with real user flows",
+            "High-fidelity UI designs + raw design files",
+            "Scope of work + detailed feature list (SRS)",
+            "Ready-to-build foundation for dev teams  ",
+            "Trello board for real-time tracking"
+          ]
+        }
+      ],
   },
   {
     icon: <FaBolt className="group-hover:text-white text-blue-500 text-2xl transition-colors duration-300" />,
     title: "Digital Innovation & Strategy",
     description:
       "Enterprise-focused solutions that drive growth. We deliver:",
-    points: [
-      "Digital transformation strategies",
-      "Operational efficiency solutions",
-      "Innovation roadmaps",
-    ],
+      points: [
+        {title:"Deliverables",
+          values:[
+            "Clickable prototype with real user flows",
+            "High-fidelity UI designs + raw design files",
+            "Scope of work + detailed feature list (SRS)",
+            "Ready-to-build foundation for dev teams  ",
+            "Trello board for real-time tracking"
+          ]
+        }
+      ],
   },
 ];
 
@@ -58,26 +99,34 @@ function Section4() {
           Your success is our priority. We offer end-to-end mobile app development services tailored to your unique vision and goals.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-4">
-        {services.map((service, index) => (
-          <div key={index} className="group flex gap-5 bg-gradient-to-r from-blue-50 to-blue-0 border border-gray-100 hover:border-blue-200 rounded-lg p-8 text-start transition">
-            <div className="bg-blue-100 p-3 rounded-md flex items-center justify-center self-start shrink-0 transition-colors duration-300 group-hover:bg-blue-600">
-              {service.icon}
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
-              <p className="mt-5 text-start text-gray-600">{service.description}</p>
-              <ul className="text-gray-600 mt-4 space-y-2">
-                {service.points.map((point, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="text-blue-500 group-hover:text-white transition-colors duration-300"> </span><FaCheck className="text-blue-500 text-sm" /> {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
+      <div className="columns-1 md:columns-2 gap-6 max-w-6xl mx-auto">
+  {services.map((service, index) => (
+    <div
+      key={index}
+      className="group mb-6 bg-gradient-to-r from-blue-50 to-blue-0 border border-gray-100 hover:border-blue-200 rounded-lg p-8 text-start transition break-inside-avoid"
+    >
+      <div className="flex gap-5">
+        <div className="bg-blue-100 p-3 rounded-md flex items-center justify-center self-start shrink-0 transition-colors duration-300 group-hover:bg-blue-600">
+          {service.icon}
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900">
+            {service.title}
+          </h3>
+          <p className="mt-5 text-start text-gray-600">
+            {service.description}
+          </p>
+          <ul className="text-gray-600 mt-4 space-y-2">
+            <AccordionUsage services={service.points} />
+          </ul>
+        </div>
       </div>
+    </div>
+  ))}
+</div>
+
+
+
       <div className="text-center mt-10">
         <button className="bg-blue-600 text-[16px] max-sm:text-[14px] text-white px-8 max-sm:px-4 py-4 max-sm:py-0 rounded-lg hover:bg-blue-700">
           Discuss Your Project →

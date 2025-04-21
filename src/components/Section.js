@@ -45,10 +45,10 @@ function Section() {
             </div>
 
             {/* Cards Section */}
-            <div className="mt-8 grid lg:w-[70%] grid-cols-1 md:grid-cols-2 gap-6 mx-auto text-center">
+            <div className="mt-8  lg:w-[100%]  gap-6 mx-auto text-center">
                 {/* Card 1 */}
                 <div
-                    className="border rounded-lg hover:shadow-lg overflow-hidden group cursor-pointer"
+                    className="border lg:flex rounded-lg hover:shadow-lg overflow-hidden group cursor-pointer"
                     onMouseEnter={() => handleMouseEnter(0)}
                     onMouseLeave={() => handleMouseLeave(0)}
                 >
@@ -155,12 +155,12 @@ function Section() {
 {/* card 3 */}
                 <div
                     className="border rounded-lg hover:shadow-lg overflow-hidden group cursor-pointer"
-                    onMouseEnter={() => handleMouseEnter(1)}
-                    onMouseLeave={() => handleMouseLeave(1)}
+                    onMouseEnter={() => handleMouseEnter(2)}
+                    onMouseLeave={() => handleMouseLeave(2)}
                 >
                     <div className="h-80 bg-gray-300 flex items-center justify-center text-2xl font-bold relative">
                         <video
-                            ref={(el) => (videoRefs.current[1] = el)} // Store the video reference
+                            ref={(el) => (videoRefs.current[2] = el)} // Store the video reference
                             className="absolute top-0 left-0 w-full h-full object-cover hidden group-hover:block"
                             src="/web vedio.mp4" // Replace with your video file path
                             muted={isMuted}
