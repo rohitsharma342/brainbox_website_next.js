@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial,  sans-serif;
-}
+
 
 /* Add this to your CSS file */
 .hide-scrollbar {
@@ -22,6 +20,9 @@ body {
   grid-template-columns: repeat(2, 1fr); /* Ensures exactly 2 columns */
   gap: 20px; /* Space between the grid items */
 }
+
+
+
 
 @media (max-width: 640px) { /* Tailwind's max-sm equivalent */
   .faq-container {

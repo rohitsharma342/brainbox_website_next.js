@@ -140,30 +140,23 @@ export function Section1() {
           className="h-[40rem] w-full max-sm:-mt-10  flex flex-col items-center justify-center overflow-hidden rounded-md">
           <h1
             className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-black relative z-20">
-            <div>
-              <p className="lg:text-[65px] lg:-mt-36 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-500">
-                Transform Your{" "}
-                <span className="relative inline-block bg-clip-text bg-gradient-to-r from-blue-500 to-blue-500">
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={words[index]} // Triggers re-render for smooth transition
-                      initial={{ opacity: 0, rotateX: 90 }}
-                      animate={{ opacity: 1, rotateX: 0 }}
-                      exit={{ opacity: 0, rotateX: -90 }} // Flips smoothly
-                      transition={{ duration: 0.3, ease: "easeInOut" }} // Smooth transition
-                      className="inline-block bg-clip-text bg-gradient-to-r from-black to-black leading-[1.2] min-h-[1em] flex items-center"
-                    >
-                      {words[index]}
-                    </motion.span>
-                  </AnimatePresence>
-                </span>{" "}
-                Into
-              </p>
-
-              <p className="lg:text-[60px] font-bold text-blue-500 lg:mt-0 max-sm:leading-8 text-center">
-                Exceptional Mobile Experience
-              </p>
-            </div>
+         <div className="text-center p-8">
+  <p className="lg:text-[40px] text-4xl font-bold text-blue-900">
+    World's #1{" "}
+    <span className="relative inline-block mx-2 px-4">
+      {/* Stretched PNG background container */}
+      <div className="absolute -top-2 -left-4 -right-4 -bottom-2 w-[120%] h-[140%] z-0">
+        <img 
+          src="/pancil.png" 
+          alt="hand-drawn circle"
+          className="w-full h-full object-fill scale-x-90 origin-left"
+        />
+      </div>
+      <span className="relative z-10">AI-Powered</span>
+    </span>{" "}
+    Development Agency
+  </p>
+</div>
 
           </h1>
 

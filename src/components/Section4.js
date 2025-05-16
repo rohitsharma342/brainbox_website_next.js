@@ -35,6 +35,17 @@ const services = [
           "Stakeholder demos & approvals",
         ]
       },
+       {title:"Starting From",
+        values:[
+          "Customized pricing — tell us your goals, and we’ll craft a tailored proposal",
+        ]
+      },
+        {title:"Estimated Delivery Time [Accordion]",
+        values:[
+          "Depends on your goals and transformation roadmap",
+        ]
+      },
+       
     ],
   },
   {
