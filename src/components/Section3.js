@@ -1,8 +1,20 @@
+import { Montserrat, Lora } from 'next/font/google'
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-montserrat',
+})
 
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-lora',
+})
 
 function Section3() {
   return (
-    <div className="bg-gray-50 pb-20">
+    <div className="bg-gray-50 pb-20" style={{fontFamily: montserrat.style.fontFamily}}>
   <div className="bg-blue-50 py-10   flex justify-center lg:w-[80%] rounded-xl mx-auto text-center">
       <div className="text-center lg:w-[60%]">
         <h2 className="text-2xl font-bold text-gray-900 lg:mb-4 max-sm:mb-2">

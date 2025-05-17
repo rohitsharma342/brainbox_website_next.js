@@ -145,11 +145,11 @@ export function Section1() {
     World's #1{" "}
     <span className="relative inline-block mx-2 px-4">
       {/* Stretched PNG background container */}
-      <div className="absolute -top-2 -left-4 -right-4 -bottom-2 w-[120%] h-[140%] z-0">
+      <div className="absolute -top-20 -left-1 -right-4  w-[120%] h-[140%] z-0">
         <img 
-          src="/pancil.png" 
-          alt="hand-drawn circle"
-          className="w-full h-full object-fill scale-x-90 origin-left"
+          src="/circle-5.svg" 
+          alt="hand-drawn circle "
+          className="w-[600px] scale-y-115  object-fill scale-x-90 origin-left"
         />
       </div>
       <span className="relative z-10">AI-Powered</span>

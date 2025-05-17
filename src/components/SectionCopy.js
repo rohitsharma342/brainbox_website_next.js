@@ -2,7 +2,19 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
+import { Montserrat, Lora } from 'next/font/google'
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-montserrat',
+})
 
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-lora',
+})
 const contentData = [
   {
     tag: "HealthTech",
@@ -92,10 +104,10 @@ export default function ScrollFadeContent() {
     <div className="py-10">
       {/* Section Header */}
       <div className="text-center mb-10">
-        <h2 className="lg:text-3xl max-sm:leading-7 font-bold">
-          Success Stories That Drive Innovation
+        <h2 className="lg:text-4xl max-sm:leading-7" style={{fontFamily: montserrat.style.fontFamily,fontWeight:"bolder"}}>
+          OUR PORTFOLIO
         </h2>
-        <p className="text-gray-500 lg:w-[50%] mx-auto text-center text-[16px] mt-2 max-sm:leading-5">
+        <p className="text-gray-500 lg:w-[50%] mx-auto text-center text-[16px] mt-2 max-sm:leading-5" style={{fontFamily: lora.style.fontFamily}}>
           Discover how we’ve helped visionaries like you transform their ideas
           into successful mobile applications
         </p>
@@ -104,7 +116,7 @@ export default function ScrollFadeContent() {
       {/* Video Cards */}
       <div className="space-y-16">
         {contentData.map((item, i) => (
-          <div key={i} className="flex flex-col md:flex-row items-center justify-between gap-10">
+          <div key={i} className="flex flex-col md:flex-row items-center text-start  justify-between gap-10">
             {/* Text Left */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -115,9 +127,9 @@ export default function ScrollFadeContent() {
               <span className="text-sm bg-blue-100 text-blue-600 px-3 py-1 rounded-full">
                 {item.tag}
               </span>
-              <h2 className="text-2xl font-bold">{item.title}</h2>
-              <p className="text-gray-600">{item.description}</p>
-              <div className="flex gap-2 flex-wrap justify-center mt-10">
+              <h2 className="text-4xl font-regular" style={{fontFamily: montserrat.style.fontFamily}}>{item.title}</h2>
+              <p className="text-gray-600" style={{fontFamily: lora.style.fontFamily}}>{item.description}</p>
+              {/* <div className="flex gap-2 flex-wrap justify-center mt-10">
                 <img
                   className="w-40"
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1280px-Download_on_the_App_Store_Badge.svg.png"
@@ -128,7 +140,7 @@ export default function ScrollFadeContent() {
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
                   alt="Play Store Badge"
                 />
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Video Right */}

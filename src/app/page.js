@@ -15,6 +15,7 @@ import Section2 from "@/components/Section2";
 import Section11 from "@/components/Section11";
 import Section5Copy from "@/components/Section5Copy";
 import SectionCopy from "@/components/SectionCopy";
+import { Hero } from "@/components/Hero";
 
 export default function Home() {
   const sectionCopyRef = useRef(null);
@@ -54,8 +55,10 @@ export default function Home() {
   return (
     <>
       <div className="text-center mt-10">
-        <Section1 />
-        <Section2 />
+        
+        <Hero />
+        <Section1/>
+        {/* <Section2 /> */}
         <Section4 />
         {/* <Section /> */}
         {/* Other sections before SectionCopy */}
